@@ -1,4 +1,4 @@
 package com.br.findYourPet;
 
-public class model {
+public class PetRepository {
 }
