@@ -11,6 +11,12 @@ java {
 	sourceCompatibility = '17'
 }
 
+jar {
+	manifest {
+		attributes 'Specification-Title': gradle.ext.findYourPet
+	}
+}
+
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor

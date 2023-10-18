@@ -1,4 +1,4 @@
-package com.br.findYourPet;
+package com.br.findYourPet.utils;
 
 import org.modelmapper.Conditions;
 import org.modelmapper.ModelMapper;
@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class PetMapper<T, K> {
+public class Mapper<T, K> {
 
     private final ModelMapper modelMapper = new ModelMapper();
 
-    public PetMapper() {
+    public Mapper() {
         this.modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT)
                 .setPropertyCondition(Conditions.isNotNull());
     }

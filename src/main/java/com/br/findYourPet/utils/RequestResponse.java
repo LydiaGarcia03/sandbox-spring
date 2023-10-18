@@ -1,4 +1,4 @@
-package com.br.findYourPet;
+package com.br.findYourPet.utils;
 
 import com.br.findYourPet.enumerators.Status;
 import lombok.Getter;
