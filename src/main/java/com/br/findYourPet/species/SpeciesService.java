@@ -18,8 +18,26 @@ public class SpeciesService {
         this.mapper = mapper;
     }
 
+    public RequestResponse<SpeciesDto> getSpecies(final Long speciesId) {
+        final Species entity = this.repository.getReferenceById(speciesId);
+        return RequestResponse.ok(this.mapper.mapEntityToDto(entity, SpeciesDto.class));
+    }
+
     public RequestResponse<SpeciesDto> createSpecies(final SpeciesDto dto) {
         this.repository.save(this.mapper.mapDtoToEntity(dto, Species.class));
         return RequestResponse.ok(dto);
+    }
+
+    public RequestResponse<SpeciesDto> updateSpecies(final SpeciesDto dto, final Long speciesId) {
+        final Species entity = this.repository.getReferenceById(speciesId);
+        this.mapper.mapDtoToEntity(dto, Species.class);
+        this.repository.save(entity);
+        return RequestResponse.ok(dto);
+    }
+
+    public RequestResponse<SpeciesDto> deleteSpecies(final Long speciesId) {
+        final Species entity = this.repository.getReferenceById(speciesId);
+        this.repository.deleteById(speciesId);
+        return RequestResponse.ok(this.mapper.mapEntityToDto(entity, SpeciesDto.class));
     }
 }

@@ -23,6 +23,11 @@ public class RaceService {
         this.mapper = mapper;
     }
 
+    public RequestResponse<RaceDto> getRace(final Long raceId) {
+        Race entity = this.repository.getReferenceById(raceId);
+        return RequestResponse.ok(this.mapper.mapEntityToDto(entity, RaceDto.class));
+    }
+
     public RequestResponse<RaceDto> createRace(final RaceDto dto) {
         final Species species = this.speciesRepository.getReferenceById(dto.getSpecies());
 
@@ -31,5 +36,18 @@ public class RaceService {
 
         this.repository.save(entity);
         return RequestResponse.ok(dto);
+    }
+
+    public RequestResponse<RaceDto> updateRace(final RaceDto dto, final Long raceId) {
+        final Race entity = this.repository.getReferenceById(raceId);
+        this.mapper.mapDtoToEntity(dto, Race.class);
+        this.repository.save(entity);
+        return RequestResponse.ok(dto);
+    }
+
+    public RequestResponse<RaceDto> deleteRace(final Long raceId) {
+        final Race entity = this.repository.getReferenceById(raceId);
+        this.repository.deleteById(raceId);
+        return RequestResponse.ok(this.mapper.mapEntityToDto(entity, RaceDto.class));
     }
 }

@@ -30,4 +30,3 @@ This project is a showcase of my skills and a platform for exploring various asp
 
 To-do
 - login
-- fazer um banner da task RUN
