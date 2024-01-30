@@ -1,32 +1,4 @@
 # sandbox-spring
 This project is a showcase of my skills and a platform for exploring various aspects of the Spring ecosystem.
 
-
-# Regra de negócio
-<br>
-
-#### O sistema deve permitir o cadastro de Pets
-
-- Um Pet é composto por:
-  - Nome
-  - Especie
-  - Raça
-  - Coloração
-  - Porte
-  - Idade (Data de nascimento)
-
-#### O sistema deve permitir o cadastro de Espécies
-
-- Uma Espécie é composta por:
-  - Nome
-  - Nome científico
-
-#### O sistema deve permitir o cadastro de Raças
-
-- Uma Raça é composta por:
-    - Nome
-    - Espécie
-
-
-To-do
-- login
+# This project was migrated to [FIND-YOUR-PET REPOSITORY](https://github.com/LydiaGarcia03/find-your-pet) to showcase also my front-end skills using React technology.
