@@ -27,10 +27,10 @@ public class Mapper<T, K> {
     }
 
     public K mapDtoToEntity(final T dto, final Class<K> clazz) {
-        return (K) this.modelMapper.map(dto, clazz);
+        return this.modelMapper.map(dto, clazz);
     }
 
     public T mapEntityToDto(final K entity, final Class<T> clazz) {
-        return (T) this.modelMapper.map(entity, clazz);
+        return this.modelMapper.map(entity, clazz);
     }
 }

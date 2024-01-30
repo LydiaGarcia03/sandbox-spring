@@ -13,7 +13,7 @@ public class UserAccountService {
 
     private final Mapper<UserAccountDto, UserAccount> mapper;
 
-    public UserAccountService(UserAccountRepository repository, Mapper<UserAccountDto, UserAccount> mapper) {
+    public UserAccountService(final UserAccountRepository repository, final Mapper<UserAccountDto, UserAccount> mapper) {
         this.repository = repository;
         this.mapper = mapper;
     }
